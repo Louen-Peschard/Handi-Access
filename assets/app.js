@@ -10,3 +10,9 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+// Bootstrap
+import 'bootstrap/dist/js/bootstrap';
+
+// Fontawesome
+import '@fortawesome/fontawesome-free/js/all';
