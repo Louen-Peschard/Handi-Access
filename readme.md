@@ -25,3 +25,7 @@
 ## Création des tables
 `php bin/console make:migration`\
 `php bin/console doctrine:migrations:migrate -n`
+
+## Chargement de fixtures
+https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html
+`php bin/console doctrine:fixtures:load`
