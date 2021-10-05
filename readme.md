@@ -1,6 +1,3 @@
-## Création de la base de données
-`php bin/console doctrine:database:create`
-
 ## Installation de composer
 `composer install`
 
@@ -15,13 +12,16 @@
 
 # Base de donnée
 
+## Création de la base de données
+`php bin/console doctrine:database:create`
+
 ## Suppression et création de la base de données
-`php bin/console doctrine:database:drop --force`
+`php bin/console doctrine:database:drop --force` \
 `php bin/console doctrine:database:create`
 
 ## Création d'une entité
 `php bin/console make:entity`
 
 ## Création des tables
-`php bin/console make:migration `
+`php bin/console make:migration`\
 `php bin/console doctrine:migrations:migrate -n`
