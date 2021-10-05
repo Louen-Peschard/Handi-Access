@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UtilisateurRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -45,10 +47,6 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $score;
 
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $date_obtention_label;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -69,6 +67,22 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $site_web;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=UtilisateurLabel::class, mappedBy="utilisateurs")
+     */
+    private $utilisateur;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Utilisateurlabel::class, mappedBy="idUtilisateur")
+     */
+    private $idUtilisateur;
+
+    public function __construct()
+    {
+        $this->utilisateur = new ArrayCollection();
+        $this->idUtilisateur = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -183,17 +197,7 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getDateObtentionLabel(): ?\DateTimeInterface
-    {
-        return $this->date_obtention_label;
-    }
 
-    public function setDateObtentionLabel(\DateTimeInterface $date_obtention_label): self
-    {
-        $this->date_obtention_label = $date_obtention_label;
-
-        return $this;
-    }
 
     public function getAdresse(): ?string
     {
@@ -239,6 +243,63 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     public function setSiteWeb(?string $site_web): self
     {
         $this->site_web = $site_web;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|UtilisateurLabel[]
+     */
+    public function getUtilisateur(): Collection
+    {
+        return $this->utilisateur;
+    }
+
+    public function addUtilisateur(UtilisateurLabel $utilisateur): self
+    {
+        if (!$this->utilisateur->contains($utilisateur)) {
+            $this->utilisateur[] = $utilisateur;
+            $utilisateur->addUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeUtilisateur(UtilisateurLabel $utilisateur): self
+    {
+        if ($this->utilisateur->removeElement($utilisateur)) {
+            $utilisateur->removeUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Utilisateurlabel[]
+     */
+    public function getIdUtilisateur(): Collection
+    {
+        return $this->idUtilisateur;
+    }
+
+    public function addIdUtilisateur(Utilisateurlabel $idUtilisateur): self
+    {
+        if (!$this->idUtilisateur->contains($idUtilisateur)) {
+            $this->idUtilisateur[] = $idUtilisateur;
+            $idUtilisateur->setIdUtilisateur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIdUtilisateur(Utilisateurlabel $idUtilisateur): self
+    {
+        if ($this->idUtilisateur->removeElement($idUtilisateur)) {
+            // set the owning side to null (unless already changed)
+            if ($idUtilisateur->getIdUtilisateur() === $this) {
+                $idUtilisateur->setIdUtilisateur(null);
+            }
+        }
 
         return $this;
     }
