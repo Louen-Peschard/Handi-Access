@@ -26,7 +26,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur1->setRoles(['ROLE_ECOLE']);
         $utilisateur1->setPassword($this->passwordHasher->hashPassword($utilisateur1, '0000'));
         $utilisateur1->setSiteWeb('epsi.fr');
-        $utilisateur1->setScore('');
         $manager->persist($utilisateur1);
         $this->addReference("utilisateur1",$utilisateur1);
 
@@ -38,7 +37,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur2->setRoles(['ROLE_ECOLE']);
         $utilisateur2->setPassword($this->passwordHasher->hashPassword($utilisateur2, '0000'));
         $utilisateur2->setSiteWeb('epsi.fr');
-        $utilisateur2->setScore('');
         $manager->persist($utilisateur2);
         $this->addReference("utilisateur2",$utilisateur2);
 
@@ -50,19 +48,17 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur3->setRoles(['ROLE_ECOLE']);
         $utilisateur3->setPassword($this->passwordHasher->hashPassword($utilisateur3, '0000'));
         $utilisateur3->setSiteWeb('epsi.fr');
-        $utilisateur3->setScore('');
         $manager->persist($utilisateur3);
         $this->addReference("utilisateur3",$utilisateur3);
 
         $utilisateur4 = new Utilisateur();
         $utilisateur4->setAdresse('16 Bd Général de Gaulle, 44200 Nantes');
-        $utilisateur4->setEmail('wis.rennes@wis.fr');
+        $utilisateur4->setEmail('wis.nantes@wis.fr');
         $utilisateur4->setNomEntreprise('WIS - Campus de Nantes');
         $utilisateur4->setSiren('410902704');
         $utilisateur4->setRoles(['ROLE_ECOLE']);
         $utilisateur4->setPassword($this->passwordHasher->hashPassword($utilisateur4, '0000'));
         $utilisateur4->setSiteWeb('wis.fr');
-        $utilisateur4->setScore('');
         $manager->persist($utilisateur4);
         $this->addReference("utilisateur4",$utilisateur4);
 
@@ -74,7 +70,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur5->setRoles(['ROLE_ECOLE']);
         $utilisateur5->setPassword($this->passwordHasher->hashPassword($utilisateur5, '0000'));
         $utilisateur5->setSiteWeb('epitech.fr');
-        $utilisateur5->setScore('');
         $manager->persist($utilisateur5);
         $this->addReference("utilisateur5",$utilisateur5);
 
@@ -86,7 +81,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur6->setRoles(['ROLE_ECOLE']);
         $utilisateur6->setPassword($this->passwordHasher->hashPassword($utilisateur6, '0000'));
         $utilisateur6->setSiteWeb('ensup.fr');
-        $utilisateur6->setScore('');
         $manager->persist($utilisateur6);
         $this->addReference("utilisateur6",$utilisateur6);
 
@@ -98,7 +92,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur7->setRoles(['ROLE_ECOLE']);
         $utilisateur7->setPassword($this->passwordHasher->hashPassword($utilisateur7, '0000'));
         $utilisateur7->setSiteWeb('epita.fr');
-        $utilisateur7->setScore('');
         $manager->persist($utilisateur7);
         $this->addReference("utilisateur7",$utilisateur7);
 
@@ -110,7 +103,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur8->setRoles(['ROLE_ECOLE']);
         $utilisateur8->setPassword($this->passwordHasher->hashPassword($utilisateur8, '0000'));
         $utilisateur8->setSiteWeb('https://www.rennes-sb.fr/');
-        $utilisateur8->setScore('');
         $manager->persist($utilisateur8);
         $this->addReference("utilisateur8",$utilisateur8);
 
@@ -122,7 +114,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur9->setRoles(['ROLE_ECOLE']);
         $utilisateur9->setPassword($this->passwordHasher->hashPassword($utilisateur9, '0000'));
         $utilisateur9->setSiteWeb('https://www.centralesupelec.fr/');
-        $utilisateur9->setScore('');
         $manager->persist($utilisateur9);
         $this->addReference("utilisateur9",$utilisateur9);
 
@@ -134,7 +125,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur10->setRoles(['ROLE_ECOLE']);
         $utilisateur10->setPassword($this->passwordHasher->hashPassword($utilisateur10, '0000'));
         $utilisateur10->setSiteWeb('https://www.efrei.fr/');
-        $utilisateur10->setScore('');
         $manager->persist($utilisateur10);
         $this->addReference("utilisateur10",$utilisateur10);
 

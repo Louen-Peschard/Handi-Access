@@ -28,4 +28,4 @@
 
 ## Chargement de fixtures
 https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html
-`php bin/console doctrine:fixtures:load`
+`php bin/console doctrine:fixtures:load`--append
