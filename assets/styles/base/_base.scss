@@ -5,7 +5,9 @@ body {
   background-color: transparent;
   border: none;
 }
-
+.pagination{
+  border:solid black 2px;
+}
 .nav-accessiblite{
   //border:solid 3px black;
   top : 0;
@@ -28,7 +30,10 @@ body {
 .menu{
   color:#EAEAEA;
 }
-
+.img_label{
+  width:100px;
+  height: 100px;
+}
 
 h3{
   position: static;
