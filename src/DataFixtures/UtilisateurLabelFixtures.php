@@ -24,7 +24,7 @@ class UtilisateurLabelFixtures extends \Doctrine\Bundle\FixturesBundle\Fixture
 
         $certification2 = new UtilisateurLabel();
         $certification2->setUtilisateur($this->getReference('utilisateur2'));
-        $certification2->setLabel($this->getReference('label1'));
+        $certification2->setLabel($this->getReference('label2'));
         $certification2->setDateObtention(new \DateTime('2000-01-01'));
         $certification2->setNote('18');
         $manager->persist($certification2);
