@@ -26,7 +26,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur1->setRoles(['ROLE_ECOLE']);
         $utilisateur1->setPassword($this->passwordHasher->hashPassword($utilisateur1, '0000'));
         $utilisateur1->setSiteWeb('epsi.fr');
-        $utilisateur1->setScore($this->getReference('certification1'));
         $manager->persist($utilisateur1);
         $this->addReference("utilisateur1",$utilisateur1);
 
@@ -38,7 +37,6 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur2->setRoles(['ROLE_ECOLE']);
         $utilisateur2->setPassword($this->passwordHasher->hashPassword($utilisateur2, '0000'));
         $utilisateur2->setSiteWeb('epsi.fr');
-        $utilisateur2->setScore($this->getReference('certification2'));
         $manager->persist($utilisateur2);
         $this->addReference("utilisateur2",$utilisateur2);
 
