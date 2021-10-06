@@ -14,16 +14,16 @@ class LabelFixtures extends Fixture {
     public function load( ObjectManager $manager ) {
 
         $label1 = new Label();
-        $label1->setDescription('');
-        $label1->setNom('');
-        $label1->setUrlImage('');
+        $label1->setDescription('Label principal');
+        $label1->setNom('HandiAccess');
+        $label1->setUrlImage('https://drive.google.com/file/d/141zLBiJeSkUikKQrzhcOkKwCplQvYePe/view?usp=sharing');
         $manager->persist($label1);
         $this->addReference("label1",$label1);
 
         $label2 = new Label();
-        $label2->setDescription('');
-        $label2->setNom('');
-        $label2->setUrlImage('');
+        $label2->setDescription('Label handicap moteur');
+        $label2->setNom('HandiAccess Moteur');
+        $label2->setUrlImage('https://drive.google.com/file/d/1ywXPfS-ySYkmt1e5_srCCCqd4Dw15XfL/view?usp=sharing');
         $manager->persist($label2);
         $this->addReference("label2",$label2);
 
