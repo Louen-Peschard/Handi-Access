@@ -29,3 +29,6 @@
 ## Chargement de fixtures
 https://symfony.com/bundles/DoctrineFixturesBundle/current/index.html
 `php bin/console doctrine:fixtures:load --append`
+
+### En cas de problème sur une table
+`php app/console doctrine:schema:update --force`
