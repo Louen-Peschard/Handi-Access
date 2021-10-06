@@ -44,26 +44,28 @@ h3{
   font-size: 32px;
   line-height: 10px;
 }
-table {
+.classement {
   margin-left: auto;
   margin-right: auto;
 }
 
-tr, th{
+.classement tr, .classement th{
   border: 1px solid #333;
   padding-left: 10px;
 }
 
-thead,
-tfoot {
+.classement thead,
+.classement tfoot {
   background-color: grey;
   color: #fff;
 }
 
-tr:hover
-{background-color: darkgrey;
+.classement tr:hover {
+  background-color: darkgrey;
 }
 
-tbody{
-
+.filtre{
+  border: 1px solid grey;
+  border-radius: 20px;
+  padding: 10px;
 }
