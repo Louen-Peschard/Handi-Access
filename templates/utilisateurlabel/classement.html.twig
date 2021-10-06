@@ -19,12 +19,12 @@
 
             {% for utilisateur in utilisateurs %}
             <tr>
-                <th scope="row">#1</th>
+                <th scope="row">#{{ utilisateur.id}}</th>
                 <th>{{ utilisateur.nomEntreprise }}</th>
                 <th>{{ utilisateur.adresse }}</th>
-                <th>{{ utilisateur.siteWeb }}</th>
+                <th><a href="https://{{ utilisateur.siteWeb }}">{{ utilisateur.siteWeb }}</a></th>
                 <th><img style="width: 20%; position: relative" src={{ asset('build/image/logo_label.png') }}></img></th>
-                <th>8/10</th>
+                <th>{{ random(100, 200)/10 }}/20</th>
             </tr>
             {% endfor %}
 
