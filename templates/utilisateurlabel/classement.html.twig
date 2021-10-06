@@ -4,4 +4,11 @@
 
 {% block body %}
     <h1>Classement des lieux de formation les plus adaptées</h1>
+
+    <ul>
+        {% for utilisateur in utilisateurs %}
+            <li>{{ utilisateur.nomEntreprise }}</li>
+        {% endfor %}
+    </ul>
+
 {% endblock %}
