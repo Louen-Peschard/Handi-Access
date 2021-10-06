@@ -56,7 +56,7 @@ class UtilisateurFixtures extends Fixture {
 
         $utilisateur4 = new Utilisateur();
         $utilisateur4->setAdresse('16 Bd Général de Gaulle, 44200 Nantes');
-        $utilisateur4->setEmail('wis.rennes@wis.fr');
+        $utilisateur4->setEmail('wis.nantes@wis.fr');
         $utilisateur4->setNomEntreprise('WIS - Campus de Nantes');
         $utilisateur4->setSiren('410902704');
         $utilisateur4->setRoles(['ROLE_ECOLE']);
