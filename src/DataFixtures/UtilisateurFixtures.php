@@ -47,7 +47,7 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur3->setSiren('410902704');
         $utilisateur3->setRoles(['ROLE_ECOLE']);
         $utilisateur3->setPassword($this->passwordHasher->hashPassword($utilisateur3, '0000'));
-        $utilisateur3->setSiteWeb('epsi.fr');
+        $utilisateur3->setSiteWeb('wis.fr');
         $manager->persist($utilisateur3);
         $this->addReference("utilisateur3",$utilisateur3);
 
@@ -102,7 +102,7 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur8->setSiren('378327514');
         $utilisateur8->setRoles(['ROLE_ECOLE']);
         $utilisateur8->setPassword($this->passwordHasher->hashPassword($utilisateur8, '0000'));
-        $utilisateur8->setSiteWeb('https://www.rennes-sb.fr/');
+        $utilisateur8->setSiteWeb('www.rennes-sb.fr/');
         $manager->persist($utilisateur8);
         $this->addReference("utilisateur8",$utilisateur8);
 
@@ -113,7 +113,7 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur9->setSiren('130020761');
         $utilisateur9->setRoles(['ROLE_ECOLE']);
         $utilisateur9->setPassword($this->passwordHasher->hashPassword($utilisateur9, '0000'));
-        $utilisateur9->setSiteWeb('https://www.centralesupelec.fr/');
+        $utilisateur9->setSiteWeb('www.centralesupelec.fr/');
         $manager->persist($utilisateur9);
         $this->addReference("utilisateur9",$utilisateur9);
 
@@ -124,7 +124,7 @@ class UtilisateurFixtures extends Fixture {
         $utilisateur10->setSiren('398898338');
         $utilisateur10->setRoles(['ROLE_ECOLE']);
         $utilisateur10->setPassword($this->passwordHasher->hashPassword($utilisateur10, '0000'));
-        $utilisateur10->setSiteWeb('https://www.efrei.fr/');
+        $utilisateur10->setSiteWeb('www.efrei.fr/');
         $manager->persist($utilisateur10);
         $this->addReference("utilisateur10",$utilisateur10);
 

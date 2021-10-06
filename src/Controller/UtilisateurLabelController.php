@@ -24,7 +24,7 @@ class UtilisateurLabelController extends AbstractController
         $utilisateurs = $utilisateurRepository->findAll();
 
         return $this->render( 'utilisateurlabel/classement.html.twig', [
-            'utilisateurs' => $utilisateurs
+            'utilisateurs' => $utilisateurs,
         ]);
     }
 

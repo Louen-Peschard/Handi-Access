@@ -42,10 +42,6 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $nom_entreprise;
 
-    /**
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $score;
 
 
     /**
@@ -184,20 +180,6 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-
-    public function getScore(): ?float
-    {
-        return $this->score;
-    }
-
-    public function setScore(float $score): self
-    {
-        $this->score = $score;
-
-        return $this;
-    }
-
-
 
     public function getAdresse(): ?string
     {
