@@ -19,22 +19,26 @@ class UtilisateurFixtures extends Fixture {
     public function load( ObjectManager $manager ) {
 
         $utilisateur1 = new Utilisateur();
-        $utilisateur1->setAdresse('');
-        $utilisateur1->setEmail('');
+        $utilisateur1->setAdresse('Rue Fernand Robert, 35000 Rennes');
+        $utilisateur1->setEmail('espi.rennes@epsi.fr');
         $utilisateur1->setNomEntreprise('EPSI - Campus de Rennes');
-        $utilisateur1->setSiren('');
+        $utilisateur1->setSiren('393504816');
         $utilisateur1->setRoles(['ROLE_ECOLE']);
         $utilisateur1->setPassword($this->passwordHasher->hashPassword($utilisateur1, '0000'));
+        $utilisateur1->setSiteWeb('epsi.fr');
+        $utilisateur1->setScore($this->getReference('certification1'));
         $manager->persist($utilisateur1);
         $this->addReference("utilisateur1",$utilisateur1);
 
         $utilisateur2 = new Utilisateur();
-        $utilisateur2->setAdresse('');
-        $utilisateur2->setEmail('');
+        $utilisateur2->setAdresse('16 Bd Général de Gaulle, 44200 Nantes');
+        $utilisateur2->setEmail('epsi.nantes@epsi.fr');
         $utilisateur2->setNomEntreprise('EPSI - Campus de Nantes');
-        $utilisateur2->setSiren('');
+        $utilisateur2->setSiren('393504816');
         $utilisateur2->setRoles(['ROLE_ECOLE']);
         $utilisateur2->setPassword($this->passwordHasher->hashPassword($utilisateur2, '0000'));
+        $utilisateur2->setSiteWeb('epsi.fr');
+        $utilisateur2->setScore($this->getReference('certification2'));
         $manager->persist($utilisateur2);
         $this->addReference("utilisateur2",$utilisateur2);
 
