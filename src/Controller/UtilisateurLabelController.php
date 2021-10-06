@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\UtilisateurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,8 +19,13 @@ class UtilisateurLabelController extends AbstractController
      *
      * @return Response
      */
-    public function classement() {
-        return $this->render( 'utilisateurlabel/classement.html.twig');
+    public function classement(UtilisateurRepository $utilisateurRepository) {
+
+        $utilisateurs = $utilisateurRepository->findAll();
+
+        return $this->render( 'utilisateurlabel/classement.html.twig', [
+            'utilisateurs' => $utilisateurs
+        ]);
     }
 
 }
