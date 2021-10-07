@@ -10,20 +10,114 @@
 </header>
     <div class="sticky-top">
         <div class="nav-accessiblite">
+        <h5 class="page-item" id="accessibilite_titre">Accessiblité
         <ul class="pagination">
-            <li class="page-item align-middle" id="accessibilite_titre">Accessiblité</li>
-            <li class="page-item"><a class="page-link" href="#"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_augmenter.png') }}" alt="Augmenter la police d'écriture"></a></li>
-            <li class="page-item"><a class="page-link" href="#"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_baisser.png') }}" alt="Baisser la police d'écriture"></a></li>
-            <li class="page-item"><a class="page-link" href="#"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_reinitialiser.png') }}" alt="Reinitialiser la police d'écriture"></a></li>
-            <li class="page-item"><a class="page-link" href="#"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_contraste.png') }}" alt="Changer le contraste de la page"></a></li>
-            <li class="page-item"><a class="page-link" href="#"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_audio.png') }}" alt="Lire la page à l'aide de l'assistant"></a></li>
+            <li class="page-item"><a class="page-link" href="#" onClick="augmenterPolice();"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_augmenter.png') }}" alt="Augmenter la police d'écriture"></a></li>
+            <li class="page-item"><a class="page-link" href="#" onClick="baisserPolice();"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_baisser.png') }}" alt="Baisser la police d'écriture"></a></li>
+            <li class="page-item"><a class="page-link" href="#" onClick="reinitialiserPolice();"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_reinitialiser.png') }}" alt="Reinitialiser la police d'écriture"></a></li>
+            <li class="page-item"><a class="page-link" href="#" onClick="changerContraste();"><img class="img-thumbnail" src="{{ asset('build/image/accessibilite/accessibilite_contraste.png') }}" alt="Changer le contraste de la page"></a></li>
+            <li class="page-item"><a class="page-link" href="#" onClick="changerAudio();"><img class="img-thumbnail" id="audio" src="{{ asset('build/image/accessibilite/accessibilite_audio.png') }}" alt="Lire la page à l'aide de l'assistant"></a></li>
         </ul>
+        </h5>
     </div>
     </div>
     <nav class="nav nav-pills nav-fill navbar-light menu">
-        <a class="nav-item nav-link item-menu" href="#">VOUS ETES EN SITUATION DE HANDICAP</a>
-        <a class="nav-item nav-link item-menu" href="#">VOUS ETES UN ORGANISME DE FORMATION</a>
-        <a class="nav-item nav-link item-menu" href="/utilisateurlabel/classement">CLASSEMENT</a>
-        <a class="nav-item nav-link item-menu" href="#">CONNEXION A VOTRE ESPACE</a>
+        <a class="nav-item nav-link item-menu" onmouseover="ecouterAudio('Vous êtes en situation de handicap');" href="#">VOUS ETES EN SITUATION DE HANDICAP</a>
+        <a class="nav-item nav-link item-menu" onmouseover="ecouterAudio('Vous êtes un organisme de formation');" href="#">VOUS ETES UN ORGANISME DE FORMATION</a>
+        <a class="nav-item nav-link item-menu" onmouseover="ecouterAudio('Classement');" href="/utilisateurlabel/classement">CLASSEMENT</a>
+        <a class="nav-item nav-link item-menu" onmouseover="ecouterAudio('Connexion à votre espace');" href="#">CONNEXION A VOTRE ESPACE</a>
     </nav>
 </div>
+<script>
+var couleur_body = true;
+function augmenterPolice()
+{
+    var elements = document.getElementsByClassName('text');
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var size = element.style.fontSize;
+        size = size.replace('px', '');
+        element.style.fontSize = (parseInt(size, 10) + 1) + 'px';
+    }
+    var elements1 = document.getElementsByClassName('titre');
+    for (var i = 0; i < elements1.length; i++) {
+        var element = elements1[i];
+        var size = element.style.fontSize;
+        size = size.replace('px', '');
+        element.style.fontSize = (parseInt(size, 10) + 1) + 'px';
+    }
+}
+
+function baisserPolice()
+{
+    var elements = document.getElementsByClassName('text');
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        var size = element.style.fontSize;
+        size = size.replace('px', '');
+        element.style.fontSize = (parseInt(size, 10) - 1) + 'px';
+    }
+    var elements1 = document.getElementsByClassName('titre');
+    for (var i = 0; i < elements1.length; i++) {
+        var element = elements1[i];
+        var size = element.style.fontSize;
+        size = size.replace('px', '');
+        element.style.fontSize = (parseInt(size, 10) - 1) + 'px';
+    }
+}
+
+function reinitialiserPolice()
+{
+    var elements = document.getElementsByClassName('text');
+    for (var i = 0; i < elements.length; i++) {
+        var element = elements[i];
+        element.style.fontSize = '20px';
+    }
+    var elements1 = document.getElementsByClassName('titre');
+    for (var i = 0; i < elements1.length; i++) {
+        var element = elements1[i];
+        element.style.fontSize = '35px';
+    }
+}
+
+function changerContraste()
+{
+    if(couleur_body)
+    {
+      document.body.style.backgroundColor = "#FFF";
+      couleur_body = false;
+    }
+    else
+    {
+        document.body.style.backgroundColor = "lightgray";
+        couleur_body = true;
+    }
+}
+var audio = false;
+function ecouterAudio(element)
+{
+    responsiveVoice.setDefaultVoice("French Female");
+    if(audio)
+    {
+        responsiveVoice.cancel();
+        responsiveVoice.speak(element);
+    }
+}
+
+function changerAudio()
+{
+     responsiveVoice.cancel();
+    if(audio)
+    {
+        audio = false;
+        document.getElementById('audio').setAttribute("src", 'build/image/accessibilite/accessibilite_audio.png');
+    }
+    else
+    {
+        audio = true;
+        document.getElementById('audio').setAttribute("src", 'build/image/accessibilite/accessibilite_audio_cut.png');
+    }
+}
+
+</script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=WQvnYqza"></script>
