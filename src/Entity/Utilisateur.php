@@ -74,6 +74,11 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
      */
     private $idUtilisateur;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $score;
+
     public function __construct()
     {
         $this->utilisateur = new ArrayCollection();
@@ -282,6 +287,18 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
                 $idUtilisateur->setIdUtilisateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getScore(): ?float
+    {
+        return $this->score;
+    }
+
+    public function setScore(?float $score): self
+    {
+        $this->score = $score;
 
         return $this;
     }

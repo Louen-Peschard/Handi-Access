@@ -4,7 +4,14 @@
 
 {% block body %}
     <h3 style="text-align: center">Classement des lieux de formation les plus adaptées</h3>
-    <table>
+    <table class="filtre">
+        <tr><input type="text" placeholder="Rechercher..."></tr>
+        <tr>Département</tr>
+        <tr>Certification</tr>
+        <tr>Note</tr>
+    </table>
+
+    <table class="classement">
         <thead>
         <tr>
             <th scope="col">Classement</th>
@@ -19,7 +26,7 @@
 
             {% for utilisateur in utilisateurs %}
             <tr>
-                <th scope="row">#{{ utilisateur.id}}</th>
+                <th scope="row">#{{ utilisateur.id }}</th>
                 <th>{{ utilisateur.nomEntreprise }}</th>
                 <th>{{ utilisateur.adresse }}</th>
                 <th><a href="https://{{ utilisateur.siteWeb }}">{{ utilisateur.siteWeb }}</a></th>
